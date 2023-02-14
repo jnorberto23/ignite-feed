@@ -52,7 +52,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: color 0.1s, background-color 0.1s;
+
+  gap: 0.5rem;
+  transition: color 0.1s, background-color 0.15s;
 }
 
 .sidebar footer a:hover {
