@@ -5,14 +5,24 @@ export function Post() {
     <article className={styles.post}>
       <header>
         <div className={styles.author}>
-          <img className={styles.authorInfo} />
-          <div>
+          <img src="https://github.com/jnorberto23.png" />
+          <div className={styles.authorInfo}>
             <strong>Joao Norberto</strong>
             <span>Web Developer</span>
           </div>
         </div>
-        <div className={styles.content}>Fala galera</div>
+
+        <time
+          title="14 de Fevereiro de 2023 às 16h40"
+          dateTime="2023-02-14 16:40:00"
+        >
+          Publicado a 4h
+        </time>
       </header>
+      <div className={styles.content}>
+        <p>Fala galeraa 👋</p>
+        <p>Acabei de subir mais um projeto no meu portifa 🚀.</p>
+      </div>
     </article>
   );
 }
