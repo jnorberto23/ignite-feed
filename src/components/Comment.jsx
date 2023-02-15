@@ -1,5 +1,5 @@
 import { ThumbsUp, Trash } from "phosphor-react";
-import styles from "./Header.module.css";
+import styles from "./Comment.module.css";
 
 export function Comment() {
   return (
@@ -24,7 +24,9 @@ export function Comment() {
           <p>Muito bom, Joao!</p>
         </div>
         <footer>
-          <ThumbsUp /> Aplaudir <span>20</span>
+          <button>
+            <ThumbsUp /> Aplaudir <span>20</span>
+          </button>
         </footer>
       </div>
     </div>
