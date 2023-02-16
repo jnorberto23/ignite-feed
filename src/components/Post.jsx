@@ -21,6 +21,7 @@ export function Post({ author, publishedAt, content }) {
     addSuffix: true,
   });
 
+  const isNewCommentTextEmpty = newCommentText.length === 0;
   function handleCreateNewComment(e) {
     e.preventDefault();
     setComments([...comments, newCommentText]);
@@ -28,9 +29,13 @@ export function Post({ author, publishedAt, content }) {
   }
 
   function handleNewCommentChange(e) {
+    e.target.setCustomValidity("");
     setNewCommentText(e.target.value);
   }
 
+  function handleNewCommentInvalid(e) {
+    e.target.setCustomValidity("Este campo e obrigatorio!");
+  }
   function deleteComment(commentToDelete) {
     const commentsWithoutDeletedOne = comments.filter((comment) => {
       return comment !== commentToDelete;
@@ -80,11 +85,15 @@ export function Post({ author, publishedAt, content }) {
           placeholder="Deixe um comentário..."
           name="comment"
           onChange={handleNewCommentChange}
+          onInvalid={handleNewCommentInvalid}
+          required
           value={newCommentText}
         />
 
         <footer>
-          <button type="submit">Publicar</button>
+          <button type="submit" disabled={isNewCommentTextEmpty}>
+            Publicar
+          </button>
         </footer>
       </form>
       <div className={styles.commentList}>
